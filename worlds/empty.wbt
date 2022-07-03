@@ -1,0 +1,298 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.9996587810866788 -0.020935798022892017 -0.015620939710529375 5.0008118160321855
+  position 0.3447771933355333 5.100302291749426 1.4679479218191802
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  luminosity 1.5
+}
+RectangleArena {
+  translation 0.07 0 -0.07
+  floorSize 3 2.6
+  floorAppearance Parquetry {
+    type "chequered"
+    IBLStrength 5
+  }
+  wallThickness 0.02
+  wallHeight 0.2
+  wallAppearance BrushedAluminium {
+    colorOverride 0.666667 0.333333 0
+    IBLStrength 10
+  }
+}
+DEF Box3 WoodenBox {
+  translation -0.05 0.1 0.36
+  name "wooden box_3(7)"
+  size 0.2 0.5 0.2
+}
+DEF Box3 WoodenBox {
+  translation 1.12 0.1 -0.28
+  name "wooden box_3(8)"
+  size 0.2 0.5 0.2
+}
+DEF Box3 WoodenBox {
+  translation -0.88 0.1 0.62
+  name "wooden box_3(6)"
+  size 0.2 0.5 0.2
+}
+DEF Box3 WoodenBox {
+  translation -0.78 0.1 -0.66
+  name "wooden box_3(5)"
+  size 0.2 0.5 0.2
+}
+DEF Box3 WoodenBox {
+  translation -0.02 0.1 -0.56
+  name "wooden box_3(4)"
+  size 0.2 0.5 0.2
+}
+RubberDuck {
+  translation 0.62 0.0365 -1.28
+  scale 1.8
+}
+DEF Box3 WoodenBox {
+  translation 0.95 0.1 0.32
+  name "wooden box_3(3)"
+  size 0.2 0.2 0.2
+}
+DEF Box3 WoodenBox {
+  translation -0.45 0.1 -0.19
+  name "wooden box_3(2)"
+  size 0.2 0.2 0.2
+}
+DEF Box3 WoodenBox {
+  translation -0.46 0.1 0.86
+  name "wooden box_3(1)"
+  size 0.2 0.2 0.2
+}
+FireExtinguisher {
+  translation 0.8999998443129348 -0.004708800003965896 -0.8700000226732872
+  rotation -0.14430198852612924 -1.9449000689601272e-07 0.9895336962970825 -0.00779953821260563
+}
+CardboardBox {
+  translation -1.07 0.1 -0.08
+  name "card box"
+  size 0.2 0.2 0.2
+}
+Robot {
+  translation -1.12307 0.0396912 -1.07862
+  rotation 1.29024e-06 1 1.38816e-06 0.0488239
+  children [
+    DEF global_gps2 GPS {
+      translation 0 0 -0.1
+      name "gps2"
+    }
+    Camera {
+      translation 0 0.016 0.0975
+      rotation 0 1 0 -3.1415853071795863
+      children [
+        Transform {
+          children [
+            Shape {
+              geometry Box {
+                size 0.015 0.015 0.015
+              }
+            }
+          ]
+        }
+      ]
+      name "my_camera"
+      recognition Recognition {
+      }
+    }
+    DEF global_gps1 GPS {
+      translation 0 0 0.1
+      name "gps1"
+    }
+    DistanceSensor {
+      translation -0.03 0 0.105
+      rotation 0 1 0 -1.8708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+    }
+    DistanceSensor {
+      translation 0.03 0 0.105
+      rotation 0 1 0 -1.2708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+    }
+    DEF W4 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 216.58424068680807
+        anchor -0.05 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.0625 0 -0.05
+        rotation 0.7055784151577156 -0.7055810068967113 0.06568517922750491 3.0104112223576585
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.025
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF W3 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 312.15177856000855
+        anchor 0.05 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.0625 0 -0.05
+        rotation -0.644752406153244 0.6447547744654217 0.41059178701435967 2.362387736027283
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.025
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF W2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 216.5842000748182
+        anchor -0.05 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.0625 0 0.05
+        rotation 0.7055777453049117 -0.7055803370414442 0.06569956857483417 3.010382567427808
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.025
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF W1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 312.1517370865543
+        anchor 0.05 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.0625 0 0.05
+        rotation -0.6447573808877015 0.6447597492181532 0.4105761629454097 2.3624144762398602
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.025
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF CarBody Shape {
+      appearance PBRAppearance {
+        emissiveColorMap ImageTexture {
+          url [
+            "textures/ladybug.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.05 0.21
+      }
+    }
+  ]
+  boundingObject USE CarBody
+  physics Physics {
+  }
+  controller "my_controller2"
+}
+DEF Box1 WoodenBox {
+  translation -0.05 0.1 -1.02
+  name "wooden box_1"
+  size 0.2 0.2 0.2
+}
+DEF Box2 WoodenBox {
+  translation 0.3 0.1 -0.06
+  name "wooden box(1)"
+  size 0.2 0.2 0.2
+}
+DEF Box3 WoodenBox {
+  translation 0.39 0.1 0.7
+  name "wooden box_3"
+  size 0.2 0.2 0.2
+}
